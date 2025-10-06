@@ -65,6 +65,9 @@ nav ul li a:hover {
     position: relative;
     cursor: pointer;
 }
+.cart-icon:hover {
+    color: #db3458;
+}
 
 .cart-count {
     position: absolute;
@@ -83,9 +86,11 @@ nav ul li a:hover {
 
 /* Banner principal */
 .hero {
+    
+    border-bottom: 15px solid rgb(132, 70, 70);
     background-color: #3498db;
     color: white;
-    padding: 4rem 2rem;
+    padding: 4rem 2rem ;
     text-align: center;
 }
 
@@ -97,7 +102,7 @@ nav ul li a:hover {
 .hero p {
     font-size: 1.2rem;
     max-width: 600px;
-    margin: 0 auto 2rem;
+    margin: 30 auto 2rem;
 }
 
 .btn {
