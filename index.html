@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MinimalStore - E-commerce Minimalista</title>
-<link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
-    
     <header>
         <div class="header-container">
             <div class="logo">Minimal<span>Store</span></div>
-            <nav>
+            <nav aria-label="Navigation principale">
                 <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#products">Produtos</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="#products" data-i18n="nav.products">Produits</a></li>
+                    <li><a href="#sobre" data-i18n="nav.about">À propos</a></li>
+                    <li><a href="#contato" data-i18n="nav.contact">Contact</a></li>
+                    <li class="lang-switcher" aria-label="Sélecteur de langue">
+                        <button class="lang-btn active" type="button" data-lang="fr">FR</button>
+                        <button class="lang-btn" type="button" data-lang="en">EN</button>
+                        <button class="lang-btn" type="button" data-lang="pt">PT</button>
+                    </li>
                     <li class="cart-icon" id="cart-icon">
-                        Carrinho
+                        <span id="cart-label" data-i18n="nav.cart">Panier</span>
                         <span class="cart-count" id="cart-count">0</span>
                     </li>
                 </ul>
@@ -27,60 +30,53 @@
         </div>
     </header>
 
-    <!-- Banner principal -->
     <section class="hero">
-        <h1>Estilo Minimalista para o seu Dia a Dia</h1>
-        <p>Descubra produtos cuidadosamente selecionados com design limpo e funcional</p>
-        <a href="#products" class="btn">Ver Produtos</a>
+        <h1 data-i18n="hero.title">Style minimaliste pour votre quotidien</h1>
+        <p data-i18n="hero.subtitle">Découvrez des produits soigneusement sélectionnés avec un design épuré et fonctionnel.</p>
+        <a href="#products" class="btn" data-i18n="hero.button">Voir les produits</a>
     </section>
 
-    <!-- Seção de produtos -->
     <section class="products" id="products">
-        <h2 class="section-title">Nossos Produtos</h2>
-        <div class="products-grid" id="products-grid">
-            <!-- Os produtos serão inseridos via JavaScript -->
-        </div>
+        <h2 class="section-title" data-i18n="sections.products">Nos produits</h2>
+        <div class="products-grid" id="products-grid"></div>
     </section>
 
-    <!-- Carrinho lateral -->
     <div class="overlay" id="overlay"></div>
     <div class="cart-sidebar" id="cart-sidebar">
         <div class="cart-header">
-            <h3>Seu Carrinho</h3>
-            <button class="close-cart" id="close-cart">&times;</button>
+            <h3 data-i18n="cart.title">Votre panier</h3>
+            <button class="close-cart" id="close-cart" aria-label="Fermer le panier">&times;</button>
         </div>
-        <div class="cart-items" id="cart-items">
-            <!-- Itens do carrinho serão inseridos aqui -->
-        </div>
+        <div class="cart-items" id="cart-items"></div>
         <div class="cart-total">
-            Total: R$ <span id="cart-total">0.00</span>
+            <span id="cart-total-label" data-i18n="cart.total">Total :</span>
+            <span id="cart-currency">€</span>
+            <span id="cart-total">0.00</span>
         </div>
-        <button class="checkout-btn">Finalizar Compra</button>
+        <button class="checkout-btn" data-i18n="cart.checkout">Finaliser l'achat</button>
     </div>
+
     <section id="sobre" class="products">
-        <h2 class="section-title">Sobre nós</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, magni. Numquam aspernatur deserunt facere at. Quibusdam, cumque illum ratione, magni perferendis velit accusantium totam fuga error, similique mollitia labore soluta.</p>
+        <h2 class="section-title" data-i18n="sections.about">À propos</h2>
+        <p data-i18n="about.text">Nous créons des espaces plus clairs et plus fonctionnels grâce à des pièces sélectionnées avec soin, alliant simplicité, qualité et confort.</p>
     </section>
+
     <section id="contato" class="products">
-        <h2 class="section-title">Contato</h2>
-        <p>Endereço: BR-470, km 470 - nº 2555 - Navegantes, Rio do Sul - SC, 89162-528
-            Telefone: (47) 98412-6117
-            Horário de funcionamento: 
-           07:15 - 22:00
-            </p>
+        <h2 class="section-title" data-i18n="sections.contact">Contact</h2>
+        <p data-i18n="contact.text">Adresse : BR-470, km 470 - nº 2555 - Navegantes, Rio do Sul - SC, 89162-528. Téléphone : (47) 98412-6117. Horaires : 07:15 - 22:00.</p>
     </section>
-    <!-- Rodapé -->
+
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 MinimalStore. Todos os direitos reservados.</p>
+            <p data-i18n="footer.copyright">&copy; 2025 MinimalStore. Tous droits réservés.</p>
             <div class="footer-links">
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Termos de Serviço</a>
-                <a href="#">Contato</a>
+                <a href="#" data-i18n="footer.privacy">Politique de confidentialité</a>
+                <a href="#" data-i18n="footer.terms">Conditions d'utilisation</a>
+                <a href="#" data-i18n="footer.contact">Contact</a>
             </div>
         </div>
     </footer>
-<script src="js/scripts.js"></script> 
 
+    <script src="js/scripts.js"></script>
 </body>
 </html>
